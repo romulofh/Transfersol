@@ -7,7 +7,7 @@
             <div class="card-custom">
                 
                 <div class="card-body padding-custom">
-                    <h5 class="card-title"><b>Conta:</b> <%= movement.account.number %></h5>
+                    <h5 class="card-title"><b>Conta:</b> <%= movement.conta_raiz %></h5>
                     <p class="card-text"><b>Tipo de Movimentação:</b> <%= movement.movement_type %> </p>
                     <% if movement.movement_type == 'Transferência' %>
                         <p class="card-text"><b>Conta beneficiada:</b> <%= movement.conta_alvo %> </p>

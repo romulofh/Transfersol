@@ -1,1 +1,26 @@
-<h1>Welcome to Transfersol</h1>
+<h1>Meu histórico</h1>
+
+<% @movements = Movement.all %>
+
+<body>
+
+    <% @movements.each do |movement| %>
+        <% if current_user.id == movement.user_id %>
+            <div class="card-custom">
+                
+                <div class="card-body padding-custom">
+                    <h5 class="card-title"><b>Conta:</b> <%= movement.conta_raiz %></h5>
+                    <p class="card-text"><b>Tipo de Movimentação:</b> <%= movement.movement_type %> </p>
+                    <% if movement.movement_type == 'Transferência' %>
+                        <p class="card-text"><b>Conta beneficiada:</b> <%= movement.conta_alvo %> </p>
+                    <% end %>    
+                    <p class="card-text"><b>Valor:</b> R$ <%= movement.amount %> </p>
+                    <p class="card-text"><b>Data:</b> <%= movement.created_at %> </p>
+                    
+                </div>
+
+            </div></br>
+        <% end %>
+    <% end %>
+
+</body><br>
