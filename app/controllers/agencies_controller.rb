@@ -13,6 +13,7 @@ class AgenciesController < ApplicationController
             flash[:notice] = "Agencia cadastrada com sucesso"
             redirect_to agencies_path
         else
+            flash[:danger] = "Agencia já cadastrada ou campos preenchidos incorretamentes"
             render 'new'
         end
     end

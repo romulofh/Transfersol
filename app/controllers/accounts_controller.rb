@@ -16,6 +16,7 @@ class AccountsController < ApplicationController
             flash[:notice] = "Conta cadastrada com sucesso"
             redirect_to accounts_path
         else
+            flash[:danger] = "Conta já cadastrada ou campos preenchidos incorretamentes"
             render 'new'
         end
     end
