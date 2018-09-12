@@ -1,0 +1,29 @@
+<h1>Cadastre sua conta</h1>
+
+<% contas = Agency.all %>
+
+<div class="panel-body">
+
+
+<%= form_for @account do |f| %>
+    
+    <div class="form-group">
+        <%= f.label :agencia %>
+        <%= f.text_field :agencia, autofocus: true, class: 'form-control' %>
+    </div> 
+    
+    <div class="form-group">
+        <%= f.label :number %>
+        <%= f.text_field :number, autofocus: true, class: 'form-control' %>
+    </div> 
+    
+     <div class="form-group">
+        <%= f.label :limit %>
+        <%= f.number_field :limit, class: 'form-control', :step => "0.01" %>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+
+<% end %>
+
+</div>

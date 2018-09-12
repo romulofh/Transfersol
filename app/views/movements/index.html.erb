@@ -1,0 +1,27 @@
+<h1>Minhas Movimentações</h1>
+
+<body>
+
+    <% @movements.each do |movement| %>
+        <% if current_user.id == movement.user_id %>
+            <div class="card-custom">
+                
+                <div class="card-body padding-custom">
+                    <h5 class="card-title"><b>Conta:</b> <%= movement.account.number %></h5>
+                    <p class="card-text"><b>Tipo de Movimentação:</b> <%= movement.movement_type %> </p>
+                    <% if movement.movement_type == 'Transferência' %>
+                        <p class="card-text"><b>Conta beneficiada:</b> <%= movement.conta_alvo %> </p>
+                    <% end %>    
+                    <p class="card-text"><b>Valor:</b> R$ <%= movement.amount %> </p>
+                    <p class="card-text"><b>Data:</b> <%= movement.created_at %> </p>
+                    
+                </div>
+
+            </div></br>
+        <% end %>
+    <% end %>
+
+    <%= link_to "Realizar Movimentação", new_movement_path, :class=>"btn btn-primary"  %>
+    </br>
+
+</body><br>

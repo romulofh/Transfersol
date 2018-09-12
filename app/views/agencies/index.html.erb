@@ -1,0 +1,21 @@
+<h1>Minhas Agências</h1>
+
+<body>
+
+    <% @agencies.each do |agency| %>
+        <div class="card-custom">
+            
+            <div class="card-body padding-custom">
+                <h5 class="card-title"><b>Número:</b> <%= agency.number %></h5>
+                <p class="card-text"><b>Endereço:</b> <%= agency.address %> </p>
+                <%= link_to "Editar", edit_agency_url(agency), :class=>"btn btn-primary" %>
+                <%= link_to "Deletar", agency_path(agency), method: :delete, data: {confirm: "Você tem certeza?"}, :class=>"btn btn-danger" %>
+            </div>
+
+        </div></br>
+    <% end %>
+
+    <%= link_to "Cadastrar Agência", new_agency_path, :class=>"btn btn-primary"  %>
+    </br>
+
+</body><br>

@@ -1,0 +1,20 @@
+<h1>Minhas Contas</h1>
+
+<body>
+
+    <% @accounts.each do |account| %>
+        <div class="card-custom">
+            
+            <div class="card-body padding-custom">
+                <h5 class="card-title"><b>Número:</b> <%= account.number %></h5>
+                <p class="card-text"><b>Saldo:</b> R$ <%= account.limit %> </p>
+                <%= link_to "Detalhes", account_path(account), :class=>"btn btn-primary" %>
+            </div>
+
+        </div></br>
+    <% end %>
+
+    <%= link_to "Cadastrar Conta", new_account_path, :class=>"btn btn-primary"  %>
+    </br>
+
+</body><br>

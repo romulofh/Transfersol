@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   resources :agencies
 
+  resources :accounts
+
+  resources :movements
+
 end

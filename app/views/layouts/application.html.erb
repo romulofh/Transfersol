@@ -66,9 +66,9 @@
           <div class="well sidebar-nav">
             <h3>Olá, <%= current_user.first_name %></h3>
             <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Agências", agencies_path  %></li>
+              <li><%= link_to "Contas", accounts_path  %></li>
+              <li><%= link_to "Movimentações", movements_path  %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-danger'%></li>
             </ul>
           </div><!--/.well -->

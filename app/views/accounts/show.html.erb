@@ -1,0 +1,12 @@
+<h1 align="center">Minha Conta</h1>
+
+<div class="card-custom">
+    <div class="padding-custom">
+        <h5 class="card-title"><b>Número:</b> <%= @account.number %></h5>
+        <p class="card-text"><b>Agência:</b> <%= @account.agency.number %> </p>
+        <p class="card-text"><b>Endereço:</b> <%= @account.agency.address %> </p>
+        <p class="card-text"><b>Saldo:</b> R$ <%= @account.limit %> </p>
+        <%= link_to "Editar", edit_account_url(@account), :class=>"btn btn-primary" %>
+        <%= link_to "Deletar", account_path(@account), method: :delete, data: {confirm: "Você tem certeza?"}, :class=>"btn btn-danger" %>
+    </div>
+</div></br>
